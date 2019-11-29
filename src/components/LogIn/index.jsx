@@ -1,10 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './styles.scss';
 
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = { user: '', password: '' };
+    this.onSubmit = props.onSubmit;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,6 +22,7 @@ class LogIn extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.onSubmit('LOGIN', this.state);
   }
 
   render() {
@@ -53,5 +57,9 @@ class LogIn extends React.Component {
     );
   }
 }
+
+LogIn.propTypes = {
+  onSubmit: PropTypes.func,
+};
 
 export default LogIn;
