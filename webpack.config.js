@@ -17,5 +17,11 @@ module.exports = {
       { test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ] }
     ]
   },
+  resolve:{
+    extensions: ['.jsx', '.js'],
+    alias: {
+      '~': path.resolve(__dirname, 'src')
+    }
+  },
   plugins:[new HWP({template: './src/index.html'})]
 };
