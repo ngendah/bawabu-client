@@ -1,11 +1,12 @@
+/* eslint-env browser */
 import React from 'react';
 import ReactDom from 'react-dom';
 import 'bootstrap/scss/bootstrap.scss';
 
-const App = () => {
-  return (<div>
+const App = () => (
+  <div>
     <h3>Bawabu client</h3>
-  </div>);
-};
+  </div>
+);
 
-ReactDom.render(<App/>, document.getElementById('root'));
+ReactDom.render(<App />, document.getElementById('root'));

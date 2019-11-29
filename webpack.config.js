@@ -2,7 +2,7 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: 'main.js',
     path: path.join(__dirname, '/dist'),
@@ -13,7 +13,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader'},
+      { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader'},
       { test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ] }
     ]
   },
