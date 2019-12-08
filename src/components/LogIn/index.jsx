@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Endpoints } from '~/common/constants';
 
 import './styles.scss';
+
 
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { user: '', password: '' };
-    this.onSubmit = props.onSubmit;
+    this.state = {
+      client_id: 'c2ce91a6-98b6-4d4b-99ad-eeb174c0b6d5',
+      user_uid: '',
+      password: '',
+      grant_type: 'user_credentials',
+      refresh: true
+    };
+    this.submit = props.onSubmit;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -22,7 +30,7 @@ class LogIn extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.onSubmit('LOGIN', this.state);
+    this.submit(this.state, Endpoints.AUTH);
   }
 
   render() {
@@ -33,11 +41,11 @@ class LogIn extends React.Component {
           className="d-flex flex-column align-items-center login"
         >
           <div className="form-group">
-            <label htmlFor="user">User</label>
+            <label htmlFor="user_uid">User</label>
             <input
               onChange={this.handleChange}
               className="form-control"
-              name="user"
+              name="user_uid"
               placeholder="user"
             />
           </div>
