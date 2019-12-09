@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Endpoints } from '~/common/constants';
+import { Endpoints } from '@/common/constants';
 
 import './styles.scss';
 

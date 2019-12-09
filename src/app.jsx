@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
-import LogIn from '~/components/LogIn';
-import { API_TYPE } from '~/common/constants';
+import LogIn from '@/components/LogIn';
+import { API_TYPE } from '@/common/constants';
 
 import 'bootstrap/scss/bootstrap.scss';
 

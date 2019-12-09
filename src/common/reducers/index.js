@@ -1,4 +1,4 @@
-import { API_RESULT, ApiResults } from '~/common/constants';
+import { API_RESULT, ApiResults } from '@/common/constants';
 
 function onLoginSuccess(response) {
   return { ...response.data, isAuthenticated: true };

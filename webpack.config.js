@@ -2,7 +2,7 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/main.jsx',
   output: {
     filename: 'main.js',
     path: path.join(__dirname, '/dist'),
@@ -20,7 +20,7 @@ module.exports = {
   resolve:{
     extensions: ['.jsx', '.js'],
     alias: {
-      '~': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src')
     }
   },
   plugins:[new HWP({template: './src/index.html'})]
