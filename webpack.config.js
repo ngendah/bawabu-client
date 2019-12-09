@@ -2,7 +2,7 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: 'main.js',
     path: path.join(__dirname, '/dist'),
