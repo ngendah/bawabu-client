@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { API_TYPE, API_RESULT, ApiResults } from '~/common/constants';
+import { API_TYPE, API_RESULT, ApiResults } from '@/common/constants';
 
 const Axios = axios.create({
   baseURL: 'http://localhost:8080/api',
@@ -8,15 +8,15 @@ const Axios = axios.create({
 });
 
 
-export function* _Api(action) {
+function* apiCall(action) {
   try {
     const response = yield call(Axios, action.payload);
-    yield put ({ type: API_RESULT, status: ApiResults.SUCCESS, response });
+    yield put({ type: API_RESULT, status: ApiResults.SUCCESS, response });
   } catch (error) {
-    yield put ({ type: API_RESULT, status: ApiResults.ERROR, response: error });
+    yield put({ type: API_RESULT, status: ApiResults.ERROR, response: error });
   }
 }
 
-export function* Api () {
-  yield takeLatest(API_TYPE, _Api);
+export default function* api() {
+  yield takeLatest(API_TYPE, apiCall);
 }

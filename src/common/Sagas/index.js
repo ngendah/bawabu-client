@@ -1,8 +1,7 @@
 import { all } from 'redux-saga/effects';
-import { Api } from '~/common/Api';
+import api from '@/common/Api';
 
 
-export function* rootSaga () {
-  yield all([Api()]);
+export default function* rootSaga() {
+  yield all([api()]);
 }
-

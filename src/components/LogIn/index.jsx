@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Endpoints } from '~/common/constants';
+import { Endpoints } from '@/common/constants';
 
 import './styles.scss';
 
@@ -13,7 +13,7 @@ class LogIn extends React.Component {
       user_uid: '',
       password: '',
       grant_type: 'user_credentials',
-      refresh: true
+      refresh: true,
     };
     this.submit = props.onSubmit;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,23 +41,27 @@ class LogIn extends React.Component {
           className="d-flex flex-column align-items-center login"
         >
           <div className="form-group">
-            <label htmlFor="user_uid">User</label>
-            <input
-              onChange={this.handleChange}
-              className="form-control"
-              name="user_uid"
-              placeholder="user"
-            />
+            <label htmlFor="user_uid">
+              User
+              <input
+                id="user_uid"
+                onChange={this.handleChange}
+                className="form-control"
+                name="user_uid"
+              />
+            </label>
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={this.handleChange}
-              type="password"
-              className="form-control"
-              name="password"
-              placeholder="password"
-            />
+            <label htmlFor="password">
+              Password
+              <input
+                id="password"
+                onChange={this.handleChange}
+                type="password"
+                className="form-control"
+                name="password"
+              />
+            </label>
           </div>
           <button type="submit" className="btn btn-primary">LogIn</button>
         </form>
@@ -67,7 +71,7 @@ class LogIn extends React.Component {
 }
 
 LogIn.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default LogIn;
