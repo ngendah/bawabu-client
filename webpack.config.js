@@ -2,21 +2,26 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/main.jsx',
   output: {
     filename: 'main.js',
-    path: './dist',
+    path: path.join(__dirname, '/dist'),
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: 'babel-loader'
-    }]
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader'},
+      { test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ] }
+    ]
+  },
+  resolve:{
+    extensions: ['.jsx', '.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   },
   plugins:[new HWP({template: './src/index.html'})]
 };

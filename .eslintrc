@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "airbnb", "eslint:recommended", "plugin:react/recommended", "plugin:import/errors"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "import/resolver": {
+      "webpack": "webpack.config.js"
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+  }
+}
