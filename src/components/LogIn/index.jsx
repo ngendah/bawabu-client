@@ -35,16 +35,16 @@ class LogIn extends React.Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-end">
+      <div className="d-flex justify-content-center align-items-center h-100">
         <form
           onSubmit={this.handleSubmit}
           className="d-flex flex-column align-items-center login"
         >
           <div className="form-group">
-            <label htmlFor="user_uid">
+            <label htmlFor="user-uid">
               User
               <input
-                id="user_uid"
+                id="user-uid"
                 onChange={this.handleChange}
                 className="form-control"
                 name="user_uid"

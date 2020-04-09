@@ -7,7 +7,7 @@ import { API_TYPE } from '@/common/constants';
 import 'bootstrap/scss/bootstrap.scss';
 
 
-class App extends React.Component {
+class Form extends React.Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (<LogIn onSubmit={this.onSubmit} />);
+    return (<div className="container"><LogIn onSubmit={this.onSubmit} /></div>);
   }
 }
 
@@ -36,7 +36,5 @@ App.PropTypes = {
 
 export default connect(
   null,
-  {
-    onSubmit: (type, payload) => ({ type, payload }),
-  },
+  { onSubmit: (type, payload) => ({ type, payload }), },
 )(App);
