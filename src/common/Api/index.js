@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { API_TYPE, API_RESULT, ApiResults } from '@/common/constants';
+import { API_TYPE, API_RESULT, ApiResults } from '~/common/constants';
 
 const Axios = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: 'http://localhost:3000/',
   timeout: 1000,
 });
 
